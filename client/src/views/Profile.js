@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom"
 import { useEffect } from "react"
 import Match from "../components/Match"
 
-function Profile({ info, error, setError, setRegion, setInfo, matchHistory, getMatchHistory }) {
+function Profile({ info, setError, setRegion, setInfo, matchHistory, getMatchHistory }) {
     const profileIcon = "http://ddragon.leagueoflegends.com/cdn/13.1.1/img/profileicon/"
     const navigate = useNavigate()
     let { code } = useParams()
@@ -11,19 +11,18 @@ function Profile({ info, error, setError, setRegion, setInfo, matchHistory, getM
     function getInfo() {
         setError("")
         setRegion(code)
-        axios.get(`http://127.0.0.1:5000/user/${code}/${username}`).then(response => {
+        axios.get(`user/${code}/${username}`).then(response => {
             setInfo(response.data)
             getMatchHistory(code, username, response.data.puuid)
         }).catch(error => {
             setError(error.response.data.status.message)
             navigate(`/error/${error.response.status}`)
         })
-        console.log("fire once")
     }
     useEffect(() => {
         if(info === "") {
             getInfo()
-        } else if(info && matchHistory.length === 0) {
+        } else if(info !== "" && matchHistory.length === 0) {
             getMatchHistory(code, username, info.puuid)
         }
     }, []);
@@ -35,12 +34,15 @@ function Profile({ info, error, setError, setRegion, setInfo, matchHistory, getM
         
         <div className="profile">
             <div className="summoner">
+            { info.profileIconId !== undefined &&
                 <div className="profile-icon">
-                    <img src={`${profileIcon}${info.profileIconId}.png`} alt={info.profileIconId} />
-                    <div className="profile-level">
-                        <span>{info.summonerLevel}</span>
-                    </div>
+                        <img src={`${profileIcon}${info.profileIconId}.png`} alt={info.profileIconId} />
+                        <div className="profile-level">
+                            <span>{info.summonerLevel}</span>
+                        </div>
+                    
                 </div>
+            }
                 <div className="profile-name">
                     <span>{info.name}</span>
                     <button onClick={getInfo}>Update</button>

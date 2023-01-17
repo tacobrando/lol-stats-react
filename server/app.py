@@ -49,7 +49,7 @@ def getUserByInput(name, region):
 @app.route("/user/<region>/<name>/match-history/<puuid>", methods=["GET"])
 def getMatchHistory(region, name, puuid):
     code = region.upper()
-    url = f"https://{platformCodes[code][1]}{api_url}/lol/match/v5/matches/by-puuid/{puuid}/ids?start=0&count=10&api_key={api_key}"
+    url = f"https://{platformCodes[code][1]}{api_url}/lol/match/v5/matches/by-puuid/{puuid}/ids?start=0&count=20&api_key={api_key}"
     response = requests.get(url)
 
     if len(response.json()) == 0:
@@ -70,3 +70,7 @@ def getMatchById(region, id):
     response = requests.get(url)
 
     return response.json()
+
+
+if __name__ == '__main__':
+    app.run(debug=False)

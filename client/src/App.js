@@ -39,7 +39,7 @@ function App() {
 
   function getMatchHistory(code,username, puuid) {
     setMatchHistory([])
-    axios.get(`http://127.0.0.1:5000/user/${code}/${username}/match-history/${puuid}`).then(response => {
+    axios.get(`user/${code}/${username}/match-history/${puuid}`).then(response => {
         setMatchHistory(response.data)
     }).catch(error => {
         console.log(error)

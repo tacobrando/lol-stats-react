@@ -19,7 +19,7 @@ function Search({ input, regions, region, setRegion, setInput, setError, setInfo
     if(region === 'null') {
         return alert("Please select a region")
     }
-    axios.get(`http://127.0.0.1:5000/user/${region}/${input}`).then((response) => {
+    axios.get(`user/${region}/${input}`).then((response) => {
         setInfo(response.data)
         getMatchHistory(region, input, response.data.puuid)
         navigate(`/${region}/${input}`)
@@ -29,7 +29,6 @@ function Search({ input, regions, region, setRegion, setInput, setError, setInfo
         navigate(`/error/${error.response.status}`)
         return 
     })
-    console.log("search fire once")
   }
   return (
     <form id="search" onSubmit={searchHandler}>

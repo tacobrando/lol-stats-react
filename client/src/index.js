@@ -5,6 +5,24 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 
+import axios from "axios"
+
+axios.defaults.baseURL = "https://lol-stats-flask.herokuapp.com/"
+
+axios.interceptors.request.use(request => {
+  // Edit request config
+  return request;
+}, error => {
+  return Promise.reject(error);
+});
+
+axios.interceptors.response.use(response => {
+  // Edit response config
+  return response;
+}, error => {
+  return Promise.reject(error);
+});
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

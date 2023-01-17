@@ -25,7 +25,7 @@ function Match({ matchId, region, name }) {
 
 
     function getMatch() {
-        axios.get(`http://127.0.0.1:5000/${region}/match/${matchId}`).then(response => {
+        axios.get(`${region}/match/${matchId}`).then(response => {
             let data = response.data.info
             let gameType = getMatchType(
                 { 
@@ -63,7 +63,6 @@ function Match({ matchId, region, name }) {
             delete data.participants
             delete data.teams
         })
-        console.log("SHOULD ONLY FIRE 5 TIMES")
     }
 
     function getTeams(teams) {

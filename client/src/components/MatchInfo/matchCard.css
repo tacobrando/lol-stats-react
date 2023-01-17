@@ -1,0 +1,275 @@
+.match {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    font-size: 15px;
+    flex-grow: 1;
+    margin-bottom: 8px;
+    position: relative;
+    border-radius: 4px;
+    width: fit-content;
+    --red100: #59343B;
+    --red200: #703C47;
+    --red500: #E84057;
+    --blue100: #28344E;
+    --blue200: #2F436E;
+    --blue500: #5383E8;
+}
+
+.match-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 96px;
+    padding: 0px 8px 0px 12px;
+    justify-content: space-between;
+}
+
+
+
+.icon{
+    position: relative;
+    display: block;
+    width: 48px;
+    height: 48px;
+}
+
+.queue-type {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 108px;
+}
+
+.victory {
+    background: var(--blue100);
+    border-left: 6px solid var(--blue500);
+}
+
+.defeat {
+    background: var(--red100);
+    border-left: 6px solid var(--red500);
+}
+.summoner-stats {
+    display: block;
+}
+.summoner-champion{
+    display: flex;
+    align-items: center;
+}
+
+.summoner-champion div{
+    display: block;
+}
+.summoner-champion span {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    font-size: 11px;
+    background: rgb(32, 45, 55);
+    border-radius: 50%;
+    
+}
+
+.summoner-champion img {
+    border: 0;
+    display: block;
+    border-radius: 50%;
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+
+.spells {
+    margin-left: 4px;
+}
+
+.spells img {
+    display: block;
+    border-radius: 4px;
+    width: 22px;
+    height: 22px;
+}
+
+.spell {
+    height: 22px;
+    width: 22px;
+}
+
+.spell:nth-of-type(1){
+    margin-bottom: 2px;
+}
+
+.rune:nth-of-type(1) {
+    margin-bottom: 2px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+.runes div{
+    display: block;
+}
+
+.rune {
+    width: 22px;
+    height: 22px;
+}
+
+.score {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    width: 107px;
+    padding-right: 12px;
+    margin: 0px 8px 0px 12px;
+}
+
+.kda {
+    line-height: 22px;
+    font-size: 15px;
+}
+
+.kda span {
+    font-weight: bold;
+}
+
+#deaths {
+    color: red;
+}
+
+.ratio {
+    line-height: 16px;
+}
+
+.ratio span {
+    line-height: 16px;
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 140px;
+    font-size: 11px;
+}
+
+.items {
+    display: flex;
+}
+
+.items ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    height: 22px;
+}
+
+.items li {
+    margin: 1px;
+}
+
+.items img {
+    border-radius: 4px;
+    border: 0;
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+
+.participants {
+    display: flex;
+}
+
+.participants ul {
+    list-style: none;
+}
+
+.participants ul:nth-of-type(1) {
+    margin-right: 8px;
+}
+
+.participants li {
+    display: flex;
+    align-items: center;
+    width: 88px;
+    height: 18px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.championIcon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 4px;
+    border-radius: 4px;
+}
+.championName {
+    display: inline-block;
+    max-width: 60px;
+    vertical-align: middle;
+}
+
+.championName a {
+    font-size: 12px;
+    color: inherit;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.action {
+    display: block;
+    position: relative;
+    width: 40px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    overflow: hidden;
+}
+
+.action button {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+}
+
+.detail {
+    width: 40px;
+    height: 96px;
+}
+
+.btnVictory {
+    background-color: var(--blue200);
+    color: var(--blue500);
+}
+.btnDefeat {
+    background-color: var(--red200);
+    color: var(--red500);
+}
+
+.btnVictory:hover {
+    background-color: var(--blue100);
+}
+.btnDefeat:hover {
+    background-color: var(--red100);
+}
+
+.action svg {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    transform: rotate(0deg);
+}
+

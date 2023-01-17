@@ -1,0 +1,25 @@
+#search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0px 20px 0px 20px;
+}
+
+#username {
+    width: 50%;
+    height: 30px;
+}
+
+.height-36px {
+    height: 36px;
+}
+
+@media only screen and (max-width: 600px) {
+    #search-btn{
+        display: none;
+    }
+    #username {
+        width: 200px;
+    }
+}

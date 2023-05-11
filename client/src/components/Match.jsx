@@ -6,12 +6,12 @@ import SummonerStats from './MatchInfo/SummonerStats'
 import Participants from './MatchInfo/Participants'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import Queues from '../json/queues.json'
+import Summoners from "../json/summoners.json"
+import Runes from "../json/runes.json"
+import Items from "../json/items.json"
 
 function Match({ matchId, region, name }) {
-    const Queues = require("../json/queues.json")
-    const Summoners = require("../json/summoners.json")
-    const Runes = require("../json/runes.json")
-    const Items = require("../json/items.json")
 
     const [match, setMatch] = useState("")
     const [summoner, setSummoner] = useState("")
